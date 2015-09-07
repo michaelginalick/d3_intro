@@ -2,3 +2,5 @@
     margin: 0 auto;
     float: none;
 }
+
+.hidden { display: none; }
