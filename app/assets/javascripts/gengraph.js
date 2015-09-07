@@ -5,6 +5,7 @@ $(document).ready(function(){
             $('#remove_graph').removeClass('hidden');
             $('#new_graph').removeClass('hidden');
             e.preventDefault();
+            getAllValues();
             genGraph();
         })
 
@@ -23,6 +24,16 @@ $(document).ready(function(){
                 }
             });
         }
+
+
+        function getAllValues() {
+            $('input').each(function(index,data) {
+                var value = $(this).val();
+                console.log(value);
+            });
+        }
+
+
 });
 
 
