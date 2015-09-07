@@ -2,20 +2,13 @@ $(document).ready(function(){
 
 
         $("#genGraph").click(function(e){
-            
-            getClass();
-
             $('#new_graph').removeClass('hidden');
+            $('#remove_graph').removeClass('hidden');
             e.preventDefault();
 
-            console.log(getAllValues());
-            
-            if ( !getAllValues() ) {
-                alert("Value must be present");
-            } else{
-                genGraph();    
-            }
-            
+            getAllValues();
+
+            genGraph();
         })
 
 
@@ -25,6 +18,9 @@ $(document).ready(function(){
                 contentType: "application/json; charset=utf-8",
                 url: 'graph/data',
                 dataType: 'json',
+                data: {
+                    values: textValues
+                },
                 success: function (data) {
                     draw(data);
                 },
@@ -38,12 +34,6 @@ $(document).ready(function(){
         function getAllValues() {
             $('input').each(function(index,data) {
                 var value = $(this).val();
-                console.log(value);
-                if (value === undefined) {
-                    return false;
-                } else {
-                    return true;
-                }
             });
         }
 
@@ -53,7 +43,7 @@ $(document).ready(function(){
             if (button === 'hidden') {
                 return true;
             } else {
-                $('#remove_graph').addClass('hidden');
+                $('#remove_graph').removeClass('hidden');
             }
 
         }
