@@ -2,11 +2,20 @@ $(document).ready(function(){
 
 
         $("#genGraph").click(function(e){
-            $('#remove_graph').removeClass('hidden');
+            
+            getClass();
+
             $('#new_graph').removeClass('hidden');
             e.preventDefault();
-            getAllValues();
-            genGraph();
+
+            console.log(getAllValues());
+            
+            if ( !getAllValues() ) {
+                alert("Value must be present");
+            } else{
+                genGraph();    
+            }
+            
         })
 
 
@@ -30,7 +39,23 @@ $(document).ready(function(){
             $('input').each(function(index,data) {
                 var value = $(this).val();
                 console.log(value);
+                if (value === undefined) {
+                    return false;
+                } else {
+                    return true;
+                }
             });
+        }
+
+        function getClass() {
+            var button = $('#remove_graph').attr('class');
+
+            if (button === 'hidden') {
+                return true;
+            } else {
+                $('#remove_graph').addClass('hidden');
+            }
+
         }
 
 
