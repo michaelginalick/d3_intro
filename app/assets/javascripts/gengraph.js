@@ -6,20 +6,21 @@ $(document).ready(function(){
             $('#remove_graph').removeClass('hidden');
             e.preventDefault();
 
-            getAllValues();
+            var dataValues = getAllValues();
+            console.log(dataValues);
 
-            genGraph();
+            genGraph(dataValues);
         })
 
 
-        var genGraph = function() { 
+        var genGraph = function(dataValues) { 
             $.ajax({
                 type: "GET",
                 contentType: "application/json; charset=utf-8",
                 url: 'graph/data',
                 dataType: 'json',
                 data: {
-                    values: textValues
+                    values: dataValues
                 },
                 success: function (data) {
                     draw(data);
@@ -32,9 +33,12 @@ $(document).ready(function(){
 
 
         function getAllValues() {
+            var array = [];
             $('input').each(function(index,data) {
                 var value = $(this).val();
+                array.push(value);
             });
+            return array;
         }
 
         function getClass() {
