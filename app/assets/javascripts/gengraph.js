@@ -5,6 +5,7 @@ $(document).ready(function(){
 
         $("#genGraph").click(function(e){
             $('#remove_graph').removeClass('hidden');
+            $('#new_graph').removeClass('hidden');
             e.preventDefault();
             genGraph();
         })
