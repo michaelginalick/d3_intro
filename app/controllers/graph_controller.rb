@@ -3,10 +3,10 @@ class GraphController < ApplicationController
   end
  
   def data
-  	puts "I am here" + params.to_s
+  	puts "I am here" + params[:values].to_s
     respond_to do |format|
       format.json {
-        render :json => [1,2,3,4,5]
+        render :json => params[:values]
       }
     end
   end
