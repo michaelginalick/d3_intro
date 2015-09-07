@@ -2,15 +2,14 @@ $(document).ready(function(){
 
 	$(function () {
     $("#btnAdd").bind("click", function () {
-    	//console.log("I am here");
         var div = $("<div />");
         div.html(GetDynamicTextBox(""));
         $("#TextBoxContainer").append(div);
     });
 
-    $("body").on("click", ".remove", function () {
-        $(this).closest("div").remove();
-    });
+        $("body").on("click", ".remove", function () {
+            $(this).closest("div").remove();
+        });
 	});
 	function GetDynamicTextBox(value) {
     return '<name = "DynamicTextBox" type="text" value = "' + value + '" />&nbsp;' +
