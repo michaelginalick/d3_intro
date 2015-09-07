@@ -34,9 +34,13 @@ $(document).ready(function(){
 
         function getAllValues() {
             var array = [];
-            $('input').each(function(index,data) {
+            $('.form-control').each(function(index,data) {
                 var value = $(this).val();
-                array.push(value);
+                if (value) {
+                    array.push(value);
+                } else {
+                    //alert("Must contain value");
+                }
             });
             return array;
         }
