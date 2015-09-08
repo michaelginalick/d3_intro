@@ -5,6 +5,7 @@ $(document).ready(function(){
             $('#new_graph').removeClass('hidden');
             $('#remove_graph').removeClass('hidden');
             e.preventDefault();
+            hitApi();
             var dataValues = getAllValues();
             genGraph(dataValues);
         })
@@ -23,6 +24,23 @@ $(document).ready(function(){
                     draw(data);
                 },
                 error: function (result) {
+                    error();
+                }
+            });
+        }
+
+
+        function hitApi() {
+            console.log("I am here");
+            $.ajax({
+                type: "GET",
+                //contentType: "application/json;",
+                url: 'http://api.fixer.io/latest?base=USD',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data);
+                },
+                error: function(result){
                     error();
                 }
             });
