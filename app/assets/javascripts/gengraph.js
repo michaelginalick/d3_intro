@@ -5,10 +5,7 @@ $(document).ready(function(){
             $('#new_graph').removeClass('hidden');
             $('#remove_graph').removeClass('hidden');
             e.preventDefault();
-
             var dataValues = getAllValues();
-            console.log(dataValues);
-
             genGraph(dataValues);
         })
 
@@ -34,7 +31,8 @@ $(document).ready(function(){
 
         function getAllValues() {
             var array = [];
-            $('.form-control').each(function(index,data) {
+            $('input:text').each(function(index) {
+                console.log();
                 var value = $(this).val();
                 if (value) {
                     array.push(value);

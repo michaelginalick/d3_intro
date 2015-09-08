@@ -18,6 +18,7 @@ $(document).ready(function(){
 	var clear = function() {
 		var text = $("input:text");
 		text.val(" ");
+		text.focus();
 	}
 
 	});
