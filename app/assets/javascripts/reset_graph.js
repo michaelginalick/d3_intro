@@ -4,7 +4,15 @@ $(document).ready(function(){
 	})
 
 
+//loop through text boxes and remove all but the first one
 	var reset = function() {
-			$('.row').load('/graph/home');
+			var num = $("input:text").length;
+			while (num > 1) {
+				$("#remove"), function () {
+            $(this).closest("div").remove();
+            
+        };
+        num--;
+			}
 	}
 });
