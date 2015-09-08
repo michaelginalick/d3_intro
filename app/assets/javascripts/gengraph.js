@@ -31,8 +31,8 @@ $(document).ready(function(){
 
         function getAllValues() {
             var array = [];
-            $('input:text').each(function(index) {
-                console.log();
+            $('input:text').each(function(index,data) {
+                console.log( index + ": " + $(this).val() )
                 var value = $(this).val();
                 if (value) {
                     array.push(value);
