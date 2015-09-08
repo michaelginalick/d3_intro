@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
     root 'graph#index'
+    get 'graph/home'
     get 'graph/data', :defaults => { :format => 'json' }
 
   # Example of regular route:

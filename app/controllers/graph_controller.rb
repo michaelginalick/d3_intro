@@ -1,6 +1,9 @@
 class GraphController < ApplicationController
 	def index
   end
+
+  def home
+  end
  
   def data
     respond_to do |format|
