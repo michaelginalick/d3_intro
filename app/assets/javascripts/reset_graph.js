@@ -1,13 +1,10 @@
 $(document).ready(function(){
 	$("#reset_graph").click(function(){
-		console.log("I am here");
+		reset();
 	})
 
 
 	var reset = function() {
-
+			$('#new_row').load('/');
 	}
-
-
-
 });
