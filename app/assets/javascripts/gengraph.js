@@ -37,7 +37,7 @@ $(document).ready(function(){
                 if (value) {
                     array.push(value);
                 } else {
-                    //alert("Must contain value");
+                    return
                 }
             });
             return array;
