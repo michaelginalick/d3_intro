@@ -5,6 +5,6 @@ $(document).ready(function(){
 
 
 	var reset = function() {
-			$('#new_row').load('/');
+			$('.row').load('/graph/data');
 	}
 });
