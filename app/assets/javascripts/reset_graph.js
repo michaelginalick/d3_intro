@@ -4,7 +4,7 @@ $(document).ready(function(){
 	})
 
 
-	function reset() = {
+	var reset = function() {
 
 	}
 
