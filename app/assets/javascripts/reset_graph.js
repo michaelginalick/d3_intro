@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 	var clear = function() {
 		var text = $("input:text");
-		//$('.form-group')[0].reset();
+		d3.selectAll("svg > *").remove();
 		text.val("");
 		text.focus();
 	}
