@@ -17,7 +17,8 @@ $(document).ready(function(){
 
 	var clear = function() {
 		var text = $("input:text");
-		text.val(" ");
+		//$('.form-group')[0].reset();
+		text.val("");
 		text.focus();
 	}
 

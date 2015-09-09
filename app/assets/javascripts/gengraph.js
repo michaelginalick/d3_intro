@@ -2,13 +2,13 @@ $(document).ready(function(){
 
 
         $("#genGraph").click(function(e){
-            console.log("I am here");
             $('#new_graph').removeClass('hidden');
             $('#remove_graph').removeClass('hidden');
             e.preventDefault();
             //hitApi();
             var dataValues = getAllValues();
-            console.log(dataValues);
+
+            console.log(dataValues.length);
             genGraph(dataValues);
         })
 
