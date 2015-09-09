@@ -14,5 +14,13 @@ $(document).ready(function(){
             }
         });
     }
+
+    function dropDownValue() {
+        var value = $(".btn:first-child").val($(this).text());
+        return value;
+    }
+
+
+
 });
     
