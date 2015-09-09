@@ -2,11 +2,13 @@ $(document).ready(function(){
 
 
         $("#genGraph").click(function(e){
+            console.log("I am here");
             $('#new_graph').removeClass('hidden');
             $('#remove_graph').removeClass('hidden');
             e.preventDefault();
-            hitApi();
+            //hitApi();
             var dataValues = getAllValues();
+            console.log(dataValues);
             genGraph(dataValues);
         })
 
@@ -32,7 +34,6 @@ $(document).ready(function(){
         function getAllValues() {
             var array = [];
             $('input:text').each(function(index,data) {
-                console.log( index + ": " + $(this).val() )
                 var value = $(this).val();
                 if (value) {
                     array.push(value);

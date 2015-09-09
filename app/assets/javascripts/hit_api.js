@@ -1,6 +1,5 @@
 
 function hitApi() {
-    console.log("I am here");
     $.ajax({
         type: "GET",
         url: 'http://api.fixer.io/latest?base=USD',

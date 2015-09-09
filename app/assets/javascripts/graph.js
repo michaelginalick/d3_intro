@@ -1,5 +1,6 @@
 
 function draw(data) {
+    data = data || 0
     var color = d3.scale.category20b();
     var width = 420,
         barHeight = 20;
@@ -28,7 +29,7 @@ function draw(data) {
 
     bar.append("text")
         .attr("x", function (d) {
-                  return x(d) - 20;
+                  return x(d) - 50;
               })
         .attr("y", barHeight / 2)
         .attr("dy", ".35em")
