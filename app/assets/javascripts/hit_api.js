@@ -3,7 +3,7 @@
         console.log("I am here");
         $.ajax({
             type: "GET",
-            url: 'http://api.fixer.io/latest?base=' + dropDownValue(),
+            url: 'http://api.fixer.io/latest?base=USD',
             dataType: 'json',
             success: function(data){
                 console.log(data);
