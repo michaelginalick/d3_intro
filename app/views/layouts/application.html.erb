@@ -3,8 +3,9 @@
 <head>
   <title>D3</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -18,7 +19,7 @@
 				</div>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+					<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
 				</ul>
 			</div>
 			</nav>
@@ -27,6 +28,6 @@
 
 
 <%= yield %>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
