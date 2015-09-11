@@ -7,7 +7,7 @@ class GraphController < ApplicationController
  
   def data
     mathmatics = Graph.do_math(params[:values])
-    puts mathmatics
+  
     respond_to do |format|
       format.json {
         render :json => mathmatics
