@@ -2,18 +2,18 @@ $(document).ready(function(){
 
 
         $("#genGraph").click(function(e){
-            $('#new_graph').removeClass('hidden');
-            $('#remove_graph').removeClass('hidden');
-            
+            e.preventDefault();
+            //console.log(checkAllValues() );
             if ( checkAllValues() === "this is an error") { 
+                //console.log("I am here");
                 restoreHeader();
-                return false;
             } else {  
-                e.preventDefault();
+                $('#new_graph').removeClass('hidden');
+                $('#remove_graph').removeClass('hidden');
+                console.log("I am here 2");
+                //e.preventDefault();
                 //hitApi();
-                var dataValues = getAllValues();
-                //console.log(dataValues.length);
-                genGraph(dataValues);
+                genGraph( getAllValues() );
             }
         })
 
@@ -43,12 +43,10 @@ $(document).ready(function(){
 
 
         function restoreHeader() {
-            setTimeout(
-                function() {
-                    $('#message').text("Add a new stop");
-                },
-            
-            3500);
+          //$('#message').text("Entries must contain values");
+          alert("Entries must contain values");
+          reset();
+          clear();
         };
 
 
@@ -65,16 +63,6 @@ $(document).ready(function(){
             return array;
         }
 
-        function getClass() {
-            var button = $('#remove_graph').attr('class');
-
-            if (button === 'hidden') {
-                return true;
-            } else {
-                $('#remove_graph').removeClass('hidden');
-            }
-
-        }
 
 });
 
