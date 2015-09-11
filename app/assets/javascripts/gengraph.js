@@ -5,12 +5,16 @@ $(document).ready(function(){
             $('#new_graph').removeClass('hidden');
             $('#remove_graph').removeClass('hidden');
             
-            e.preventDefault();
-            //hitApi();
-            var dataValues = getAllValues();
-
-            console.log(dataValues.length);
-            genGraph(dataValues);
+            if ( checkAllValues() === "this is an error") { 
+                restoreHeader();
+                return false;
+            } else {  
+                e.preventDefault();
+                //hitApi();
+                var dataValues = getAllValues();
+                //console.log(dataValues.length);
+                genGraph(dataValues);
+            }
         })
 
 
@@ -33,12 +37,7 @@ $(document).ready(function(){
         }
 
         function checkAllValues() {
-            $('input:text').each(function(index, data){
-                var value = $(this).val();
-                if (!value) {
-                    restoreHeader();
-                }
-            })
+            return "this is an error";
         }
 
 
@@ -46,7 +45,7 @@ $(document).ready(function(){
         function restoreHeader() {
             setTimeout(
                 function() {
-                    $('#stop-header').text("Add a new stop");
+                    $('#message').text("Add a new stop");
                 },
             
             3500);
@@ -60,7 +59,7 @@ $(document).ready(function(){
                 if (value) {
                     array.push(value);
                 } else {
-                    return false;
+                    checkAllValues()
                 }
             });
             return array;
