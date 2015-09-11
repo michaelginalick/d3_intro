@@ -7,11 +7,15 @@ class GraphController < ApplicationController
  
   def data
     mathmatics = Graph.do_math(params[:values])
-  
-    respond_to do |format|
-      format.json {
-        render :json => mathmatics
-      }
+    if mathmatics > 0
+      respond_to do |format|
+        format.json {
+          render :json => mathmatics
+        }
+      end
+    else
+      flash[:notice] = "Invalid number"
+      redirect_to root_path
     end
   end
 end
