@@ -6,10 +6,11 @@ class GraphController < ApplicationController
   end
  
   def data
-    Graph.do_math
+    mathmatics = Graph.do_math(params[:values])
+    puts mathmatics
     respond_to do |format|
       format.json {
-        render :json => params[:values]
+        render :json => mathmatics
       }
     end
   end
