@@ -3,7 +3,7 @@ $(document).ready(function(){
 
         $("#genGraph").click(function(e){
             e.preventDefault();
-            if ( getAllValues() != $('input:text').length) { 
+            if ( getAllValues().length != $('input:text').length) { 
                 restoreHeader();
             } else {  
                 $('#new_graph').removeClass('hidden');
@@ -39,7 +39,6 @@ $(document).ready(function(){
 
 
         function restoreHeader() {
-          //$('#message').text("Entries must contain values");
           alert("Entries must contain values");
           reset();
           clear();
@@ -58,6 +57,25 @@ $(document).ready(function(){
             });
             return array;
         }
+
+
+        //loop through text boxes and remove all but the first one
+        // var reset = function() {
+        //     var num = $("input:text").length;
+        //     while (num >= 1) {
+        //         var ele = $("#remove");
+        //         ele.closest("div").remove();
+        //         num--;
+        //   }
+        // }
+
+        // var clear = function() {
+        //     var text = $("input:text");
+        //     d3.selectAll("svg > *").remove();
+        //     text.val("");
+        //     text.focus();
+        // }
+
 
 
 });
