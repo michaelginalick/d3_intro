@@ -4,6 +4,7 @@ $(document).ready(function(){
         $("#genGraph").click(function(e){
             $('#new_graph').removeClass('hidden');
             $('#remove_graph').removeClass('hidden');
+            
             e.preventDefault();
             //hitApi();
             var dataValues = getAllValues();
@@ -30,6 +31,27 @@ $(document).ready(function(){
                 }
             });
         }
+
+        function checkAllValues() {
+            $('input:text').each(function(index, data){
+                var value = $(this).val();
+                if (!value) {
+                    restoreHeader();
+                }
+            })
+        }
+
+
+
+        function restoreHeader() {
+            setTimeout(
+                function() {
+                    $('#stop-header').text("Add a new stop");
+                },
+            
+            3500);
+        };
+
 
         function getAllValues() {
             var array = [];
