@@ -3,15 +3,11 @@ $(document).ready(function(){
 
         $("#genGraph").click(function(e){
             e.preventDefault();
-            //console.log(checkAllValues() );
-            if ( checkAllValues() === "this is an error") { 
-                //console.log("I am here");
+            if ( getAllValues() != $('input:text').length) { 
                 restoreHeader();
             } else {  
                 $('#new_graph').removeClass('hidden');
                 $('#remove_graph').removeClass('hidden');
-                console.log("I am here 2");
-                //e.preventDefault();
                 //hitApi();
                 genGraph( getAllValues() );
             }
