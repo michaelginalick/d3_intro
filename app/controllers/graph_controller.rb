@@ -6,7 +6,7 @@ class GraphController < ApplicationController
   end
  
   def data
-    mathmatics = Graph.do_math(params[:values])
+    mathmatics = Graph.do_math(params[:values][0], params[:values][1..params[:values].size])
 
     if mathmatics[0] != 0
       respond_to do |format|
