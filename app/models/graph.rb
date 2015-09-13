@@ -4,7 +4,7 @@ class Graph < ActiveRecord::Base
 		new_array = []
 		salary.each do |x|
 			x = x.to_i
-			i = ((x / 52) / 40)
+			i = (((x / 52) / 40) * hours.to_i)
 			new_array << i
 		end
 		new_array
