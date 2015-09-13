@@ -7,7 +7,8 @@ class GraphController < ApplicationController
  
   def data
     mathmatics = Graph.do_math(params[:values])
-    if mathmatics[0] == 0
+
+    if mathmatics[0] != 0
       respond_to do |format|
         format.json {
           render :json => mathmatics
