@@ -28,11 +28,11 @@ function draw(data) {
                })
 
     bar.append("text")
-        .attr("x", function (d) {
+        .attr("x", "13", function (d) {
                   return x(d) - 50;
               })
         .attr("y", barHeight / 2)
-        .attr("dy", ".35em")
+        .attr("dy", ".15em")
         .style("fill", "white")
         .text(function (d) {
                   return d;
