@@ -2,8 +2,8 @@
 function draw(data) {
     data = data || 0
     var color = d3.scale.category20b();
-    var width = 50,
-        barHeight = 300;
+    var width = 420,
+        barHeight = 30;
 
     var x = d3.scale.linear()
         .range([0, width])
