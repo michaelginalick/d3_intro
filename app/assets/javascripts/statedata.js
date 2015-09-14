@@ -5,6 +5,5 @@ function state(data) {
 	$.each(data, function(i, val){
 		total += val;
 	});
-	$('#number_text').append();
-
+	$('#number_text').append("You are spending $" + total + " a week on meetings.");
 }
