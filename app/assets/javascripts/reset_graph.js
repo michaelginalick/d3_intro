@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$("#reset_graph").click(function(){
+		$('#append_text').hide();
 		reset();
 		clear();
 	})

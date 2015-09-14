@@ -63,6 +63,7 @@ $(document).ready(function(){
 
         //loop through text boxes and remove all but the first one
         var reset = function() {
+            $('#append_text').hide();
             var num = $("input:text").length;
             while (num >= 1) {
                 var ele = $("#remove");
