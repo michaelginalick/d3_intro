@@ -8,6 +8,7 @@ $(document).ready(function(){
             } else {  
                 $('#new_graph').removeClass('hidden');
                 $('#remove_graph').removeClass('hidden');
+                $('#number_text').removeClass('hidden');
                 //hitApi();
                 genGraph( getAllValues() );
             }
@@ -25,6 +26,7 @@ $(document).ready(function(){
                 },
                 success: function (data) {
                     draw(data);
+                    state(data);
                 },
                 error: function (result) {
                     error();
